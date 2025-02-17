@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FittyFit</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .sigmar-regular {
+        font-family: "Sigmar", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: xx-large;
+        
+    }
+
+    #maindiv{
+        background-image: url(imgs/bg.jpg);
+        min-height: 100vh;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    #marq{
+        position: sticky;
+        z-index: 1;
+        top: 2px;
+        margin-bottom: 5px;
+        display: flex; 
+        justify-content: center;
+    }
+    #marqueeid{
+        background-color: rgba(0, 0,0,0.4);
+        width: 70%;
+        font-family: serif;
+        font-weight: bolder;
+        border-radius: 10px;
+    }
+    nav{
+        height: 10vh;
+        width: 99%;
+        background:rgba(0, 0,0,0.2);
+        display: flex;
+        position: sticky;
+        border-radius: 10px;
+        z-index: 1;
+        top: 30px;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    #nav1{
+        align-items: center;
+        justify-content: left;
+        display: flex;
+        width: 40%;
+        margin :10px;
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: bold;
+        
+    }
+    #nav1 img{
+        height: 40px;
+        display: none;
+    }
+    @media screen and (max-width:660px) {
+        #nav1{
+            a{
+                display: none;
+            }
+            img{
+                padding: 10px;
+                display: flex;
+            }
+            img:hover{
+                border-radius: 10px;
+                background-color: rgba(0, 0,0,0.3);
+            }
+        }
+        #nav3{
+            button{
+                font-size: small;
+            }
+        }
+        
+        
+    }
+    #nav2{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        width: 20%;
+        
+    }
+    #nav1 a{
+        margin:10px;
+    }
+    
+    #nav3{
+        align-items: center;
+        margin: 10px;
+        justify-content: right;
+        display: flex;
+        width: 40%;
+    }
+    #nav3 button{
+        font-family: cursive;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        background-color:rgba(0, 0,0,0.2) ;
+        margin: 10px;  
+        padding: 7px;
+        border-radius: 30px;          
+        
+    }
+    #nav3 button:hover{
+        background-color: rgba(0, 0,0,0.5);
+        border-radius: 10px;
+    }
+    #carousel{
+        border-radius: 20px;
+    }
+    .carousel-item{
+    width: 100%;
+    height: 80vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 30px;
+    overflow: hidden;
+    }
+    #footer{
+        background:rgba(0, 0,0,0.3);
+        height: 300px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: justify;
+    }
+    #sub_footer{
+        padding: 10px;
+        width: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: right; 
+    }
+    #sub_footer p{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: white;
+    }
+    #sub_footer p:hover{
+        color: rgba(0, 0,0,0.9);
+    }
+    #footer1{
+        margin: 30px;
+    }
+    #footer1 p{
+        font-family: cursive;
+        font-weight: 800;
+    }
+    #footer2{
+        margin: 10px;
+        padding: 10px;
+        width: 30%;
+        display: block;
+    }
+    #footer3{
+        justify-content: bottom;
+        margin: 10px;
+        padding: 10px;
+        width: 30%;
+        display: block;
+    }#footer3 img{
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+    }
+    #cards{
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+    .card{
+        background:rgba(0, 0,0,0.2);
+        margin: 30px;
+        border-radius: 30px;
+        padding: 10px;
+
+    }
+    .card-img-top{
+        height: 170px;
+        width: 225px;
+        border-radius: 30px;
+    }
+    .card:hover{
+        transform: scale(1.2);
+    }
+    
+</style>
+<body>
+    <div id="maindiv">
+        <div id="marq">
+            <marquee id="marqueeid" behaviour="repeat" direction="left">new year membership offer upto 10% ( till 31st jan!! ).</marquee>
+        </div>
+        <nav id="nav">
+        <div id="nav1">
+            <img src="imgs/menu.webp" alt="">
+            <a class="nav-link active" aria-current="page" href="fitness.html">FITNESS</a>
+            <a class="nav-link active" aria-current="page" href="care.html">CARE</a>
+            <a class="nav-link active" aria-current="page" href="mind.html">MIND</a>
+            <a class="nav-link active" aria-current="page" href="store.html">STORE</a>
+        </div>
+        <div id="nav2">
+            <a style="font-family: fantasy;" class="navbar-brand" href="#">
+                <img src="imgs/icon1.webp" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                FittyFit
+              </a>
+        </div>
+        <div id="nav3">
+            <a style="text-decoration: none;" href="#cards"><button>Join Us</button></a>
+            <a style="text-decoration: none;" href="#footer3"><button>Contact Us</button></a>
+        </div>
+        </nav>
+    <div>
+        <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="3000">
+                <img src="imgs/g2.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="imgs/g3.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="imgs/g1.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="imgs/g4.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-caption d-none d-md-block">
+                <h5>We are FittyFit !!</h5>
+                <p class="sigmar-regular">Discover healthy wellness in your Lifestyle and experience it with our badass fitness equipments. </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="cards">
+            <div class="card" style="width: 18rem;">
+                <img src="imgs/card_img/basic.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">BASIC</h5>
+                  <p class="card-text">Unlimited access to all the basic gym equipment without personal trainner.</p>
+                  <a href="#" class="btn btn-primary">$9.99</a>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="imgs/card_img/elite.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">ELITE</h5>
+                  <p class="card-text">Unlimited access to group classes, all gyms and at-home workouts.</p>
+                  <a href="#" class="btn btn-primary">$39.99</a>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="imgs/card_img/pro.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">PRO</h5>
+                  <p class="card-text">Unlimited access to all PRO gyms and at-home workouts.</p>
+                  <a href="#" class="btn btn-primary">$79.99</a>
+                </div>
+              </div>
+              <div class="card" style="width: 18rem;">
+                <img src="imgs/card_img/Home.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">HOME</h5>
+                  <p class="card-text">Unlimited access to at-home workouts with calorie tracking .</p>
+                  <a href="#" class="btn btn-primary">$29.99</a>
+                </div>
+              </div>
+        </div>
+        <div id="footer">
+            <div style="width: 30%; padding: 10px;" id="footer1">
+                <a style="font-family: fantasy;" class="navbar-brand" href="#">
+                    <img src="imgs/icon1.webp" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                    FittyFit
+                  </a>
+                <p>Push harder than yesterday if you want a different tomorrow and The secret of getting ahead is getting started, The harder you work and the more prepared you are for something, you’re going to be able to persevere through anything so do "JOIN US"<link rel="stylesheet" href=""> now</p>
+            </div>
+            <div id="sub_footer" >
+                <div id="footer2">
+                    <h4 style="margin-bottom: 15px;">Locations</h4>
+                    <p>Tambaram</p>
+                    <p>Porur</p>
+                    <p>Mugalivakkam</p>
+                    <p>Chrompet</p>
+                    <p>Guindy</p>
+                </div>
+                <div id="footer3">
+                    <div style="display: block;">
+                    <h4 style="margin-bottom: 15px;">US ON</h4>
+                    <div style="display: flex; margin-bottom: 10px;" >
+                    <a style="display: flex;" href="https://www.instagram.com/accounts/login/?hl=en" target="_blank">
+                        <img src="imgs/footer/insta.svg" alt="">
+                    </a>
+                    <a style="display: flex;" href="https://www.facebook.com/" target="_blank">
+                        <img src="imgs/footer/facebook.png" alt="">
+                    </a>
+                    <a style="display: flex;" href="https://www.youtube.com/" target="_blank">
+                        <img src="imgs/footer/youtube.png" alt="">
+                    </a>
+                    </div>
+
+                    <h4 style="margin-bottom: 15px;">CONTACT</h4>
+                    <div style="display: flex;" >
+                        <a href="">+91 7598880935</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+      
+      
+</body>
+</html>
